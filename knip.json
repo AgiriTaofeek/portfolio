@@ -1,0 +1,18 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": [
+    "src/routes/**/*.tsx",
+    "src/routes/**/*.ts",
+    "src/entry-client.tsx",
+    "src/entry-server.tsx",
+    "src/main.tsx",
+    "vite.config.ts",
+    "eslint.config.js",
+    "prettier.config.js",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ],
+  "project": ["src/**/*.{ts,tsx,js,jsx}"],
+  "ignore": ["src/routeTree.gen.ts", "**/*.d.ts"],
+  "ignoreDependencies": ["autoprefixer", "postcss"]
+}

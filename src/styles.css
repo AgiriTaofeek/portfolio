@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import '@fontsource-variable/jetbrains-mono';
+@import '@fontsource-variable/space-grotesk';
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant light (&:is(.light *));
+@custom-variant system (&:is(.system *));
+
+:root {
+  /* --bg-0: #0b0d10; */
+  --bg-0: #ffffff;
+  --bg-1: #11141a;
+  --fg-0: #f5f7fa;
+  --accent: #6cf2c2;
+  --warning: #ffb454;
+}
+
+.dark {
+  --bg-0: #0b0d10;
+  --bg-1: #11141a;
+  --fg-0: #f5f7fa;
+  --accent: #6cf2c2;
+  --warning: #ffb454;
+}
+
+@theme inline {
+  --font-display: 'Space Grotesk Variable', 'Neue Machina', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', monospace;
+
+  --color-bg-0: var(--bg-0);
+  --color-bg-1: var(--bg-1);
+  --color-fg-0: var(--fg-0);
+  --color-accent: var(--accent);
+  --color-warning: var(--warning);
+}
+
+@layer base {
+  body {
+    @apply font-mono bg-bg-0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
