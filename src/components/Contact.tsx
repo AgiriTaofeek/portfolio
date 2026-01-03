@@ -41,6 +41,23 @@ export function Contact() {
             Let's build something impossible.
           </p>
 
+          <div className="mb-12 contact-anim space-y-2">
+            <a
+              href="mailto:taofeeqomotolani@gmail.com"
+              className="block text-xl text-white hover:text-accent transition-colors"
+            >
+              taofeeqomotolani@gmail.com
+            </a>
+            <a
+              href="https://www.linkedin.com/in/agiri-taofeek/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm font-mono text-muted-foreground hover:text-accent transition-colors"
+            >
+              linkedin.com/in/agiri-taofeek
+            </a>
+          </div>
+
           <form className="space-y-6 max-w-md contact-anim">
             <div className="group">
               <label className="block text-xs font-mono text-muted-foreground mb-2 uppercase tracking-widest group-focus-within:text-accent transition-colors">

@@ -3,12 +3,14 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 const skills = [
-  { name: 'React', level: 95 },
-  { name: 'GSAP', level: 90 },
-  { name: 'WebGL', level: 85 },
-  { name: 'TypeScript', level: 95 },
-  { name: 'Node.js', level: 80 },
-  { name: 'Tailwind', level: 95 },
+  { name: 'React.js', level: 95 },
+  { name: 'TypeScript', level: 90 },
+  { name: 'JavaScript', level: 90 },
+  { name: 'HTML5/CSS3', level: 95 },
+  { name: 'Styled-Components', level: 85 },
+  { name: 'Vite', level: 90 },
+  { name: 'GCP', level: 75 },
+  { name: 'Firebase', level: 80 },
 ]
 
 export function Skills() {

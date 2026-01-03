@@ -42,18 +42,13 @@ export function About() {
             {[
               {
                 year: '2024 - Present',
-                role: 'Senior Frontend Engineer',
-                company: 'TechNova',
-              },
-              {
-                year: '2022 - 2024',
-                role: 'Creative Developer',
-                company: 'Digital Arts',
-              },
-              {
-                year: '2020 - 2022',
                 role: 'Frontend Developer',
-                company: 'StartUp Inc',
+                company: '9 Payment Service Bank (9PSB)',
+              },
+              {
+                year: '2022',
+                role: 'B.Sc. Physics (Electronics)',
+                company: 'University of Lagos',
               },
             ].map((item, i) => (
               <div key={i} className="timeline-item relative group">

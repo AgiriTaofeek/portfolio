@@ -53,14 +53,15 @@ export function Hero() {
           ref={titleRef}
           className="text-display font-display font-medium leading-[0.9] tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-white to-white/50 py-4"
         >
-          DEVVERSE
+          TAOFEEK AGIRI
         </h1>
 
         <div className="mt-8 opacity-0 animate-fade-in delay-1000 max-w-xl mx-auto">
           <p className="text-body text-muted-foreground font-light text-balance">
-            Crafting digital experiences at the edge of possibility. <br />
-            <span className="text-white">Frontend Craftsman</span> ×{' '}
-            <span className="text-white">Creative Developer</span>
+            Building scalable financial web applications at the edge of
+            possibility. <br />
+            <span className="text-white">Frontend Developer</span> based in{' '}
+            <span className="text-white">Lagos, Nigeria</span>
           </p>
         </div>
 

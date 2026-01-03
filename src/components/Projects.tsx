@@ -4,22 +4,31 @@ import { useGSAP } from '@gsap/react'
 const projects = [
   {
     id: 1,
-    title: 'Neon Financial',
-    category: 'Fintech / WebGL',
-    image:
-      'https://placehold.co/1200x800/101010/FFFFFF/png?text=Neon+Financial',
+    title: 'Bank9ja Web',
+    category: 'Fintech / Web App',
+    image: 'https://placehold.co/1200x800/101010/FFFFFF/png?text=Bank9ja+Web',
+    link: 'https://bank9jaweb.9psb.com.ng/app',
   },
   {
     id: 2,
-    title: 'Aero Systems',
-    category: 'Aerospace / Dashboard',
-    image: 'https://placehold.co/1200x800/050505/FFFFFF/png?text=Aero+Systems',
+    title: 'Transaction Tool',
+    category: 'Internal / Dashboard',
+    image:
+      'https://placehold.co/1200x800/050505/FFFFFF/png?text=Transaction+Monitoring',
   },
   {
     id: 3,
-    title: 'Lumina Art',
-    category: 'E-commerce / 3D',
-    image: 'https://placehold.co/1200x800/202020/FFFFFF/png?text=Lumina+Art',
+    title: 'Account Opening',
+    category: 'Fintech / Onboarding',
+    image:
+      'https://placehold.co/1200x800/202020/FFFFFF/png?text=Account+Opening',
+  },
+  {
+    id: 4,
+    title: 'Corporate Platform',
+    category: 'Enterprise / Banking',
+    image:
+      'https://placehold.co/1200x800/151515/FFFFFF/png?text=Corporate+Platform',
   },
 ]
 
@@ -62,6 +71,7 @@ export function Projects() {
           <div
             key={project.id}
             className="group relative w-full aspect-video md:aspect-[2.33/1] bg-surface overflow-hidden rounded-sm cursor-none border border-white/5"
+            onClick={() => project.link && window.open(project.link, '_blank')}
           >
             {/* Project Overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/60 backdrop-blur-sm pointer-events-none">
@@ -72,8 +82,9 @@ export function Projects() {
                 <span className="px-3 py-1 border border-accent text-accent font-mono text-xs uppercase bg-accent/10">
                   {project.category}
                 </span>
-                <span className="text-white font-mono text-xs uppercase tracking-widest">
-                  View Case
+                <span className="text-white font-mono text-xs uppercase tracking-widest flex items-center gap-2">
+                  {project.link ? 'Visit Site' : 'View Case'}{' '}
+                  {project.link && '↗'}
                 </span>
               </div>
             </div>
