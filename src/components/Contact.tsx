@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { useForm, ValidationError } from '@formspree/react'
-import { Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
+import { Loader2, CheckCircle2 } from 'lucide-react'
 
 export function Contact() {
   const container = useRef<HTMLElement>(null)
