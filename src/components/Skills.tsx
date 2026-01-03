@@ -53,13 +53,13 @@ export function Skills() {
 
         {/* Physics Container Placeholder */}
         <div className="flex flex-wrap gap-6 justify-center max-w-4xl p-12 relative z-10">
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <div
               key={skill.name}
               className="skill-badge px-8 py-4 rounded-full bg-surface border border-white/10 text-foreground font-mono text-sm tracking-wider backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-accent hover:text-accent hover:shadow-[0_0_30px_-5px_var(--color-accent-glow)] cursor-none"
             >
               <span className="opacity-50 mr-2 text-xs">
-                0{Math.floor(Math.random() * 9)}
+                0{(index % 9) + 1}
               </span>
               {skill.name}
             </div>
