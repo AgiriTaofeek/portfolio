@@ -56,7 +56,7 @@ export function Contact() {
       ref={container}
       className="py-40 bg-background relative z-10 border-t border-white/5"
     >
-      <div className="container mx-auto grid md:grid-cols-2 gap-20 items-center">
+      <div className="container mx-auto grid md:grid-cols-2 gap-20 items-center px-6">
         <div>
           <div className="overflow-hidden">
             <h2 className="text-display font-display leading-[0.8] mb-6 contact-anim">
