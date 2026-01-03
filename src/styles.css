@@ -2,43 +2,116 @@
 @import 'tw-animate-css';
 @import '@fontsource-variable/jetbrains-mono';
 @import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/inter';
 
 @custom-variant dark (&:is(.dark *));
-@custom-variant light (&:is(.light *));
-@custom-variant system (&:is(.system *));
 
 :root {
-  /* --bg-0: #0b0d10; */
-  --bg-0: #ffffff;
-  --bg-1: #11141a;
-  --fg-0: #f5f7fa;
-  --accent: #6cf2c2;
-  --warning: #ffb454;
-}
+  /* "Midnight Void" Palette - Award Winning Aesthetic */
+  /* Backgrounds: Deep, rich, slightly tinted blacks */
+  --clr-bg-main: #030303;
+  --clr-bg-surface: #0e0e0e;
+  --clr-bg-glass: rgba(20, 20, 20, 0.4);
 
-.dark {
-  --bg-0: #0b0d10;
-  --bg-1: #11141a;
-  --fg-0: #f5f7fa;
-  --accent: #6cf2c2;
-  --warning: #ffb454;
+  /* Typography: Stark contrast */
+  --clr-txt-primary: #f2f2f2;
+  --clr-txt-muted: #888888;
+  --clr-txt-subtle: #444444;
+
+  /* Accents: "Acid Logic" - Sharp, high energy against void */
+  --clr-accent-primary: #ccfe00; /* Acid Lime */
+  --clr-accent-secondary: #7000ff; /* Electric Violet */
+  --clr-accent-glow: rgba(204, 254, 0, 0.15);
+
+  /* Functional */
+  --clr-border: rgba(255, 255, 255, 0.08);
+  --clr-error: #ff3333;
+
+  /* Typography Scale - Editorial & Brutalist */
+  --fs-display: clamp(3.5rem, 10vw, 9rem);
+  --fs-h1: clamp(2.5rem, 6vw, 5rem);
+  --fs-h2: clamp(1.8rem, 4vw, 3.5rem);
+  --fs-body: clamp(1rem, 1.1vw, 1.25rem);
+  --fs-mono: 0.875rem;
 }
 
 @theme inline {
-  --font-display: 'Space Grotesk Variable', 'Neue Machina', sans-serif;
+  --font-display: 'Space Grotesk Variable', sans-serif;
+  --font-body: 'Inter Variable', sans-serif;
   --font-mono: 'JetBrains Mono Variable', monospace;
 
-  --color-bg-0: var(--bg-0);
-  --color-bg-1: var(--bg-1);
-  --color-fg-0: var(--fg-0);
-  --color-accent: var(--accent);
-  --color-warning: var(--warning);
+  /* Semantic Mapping */
+  --color-background: var(--clr-bg-main);
+  --color-surface: var(--clr-bg-surface);
+  --color-glass: var(--clr-bg-glass);
+
+  --color-foreground: var(--clr-txt-primary);
+  --color-muted-foreground: var(--clr-txt-muted);
+  --color-subtle: var(--clr-txt-subtle);
+
+  --color-accent: var(--clr-accent-primary);
+  --color-accent-secondary: var(--clr-accent-secondary);
+  --color-accent-glow: var(--clr-accent-glow);
+
+  --color-border: var(--clr-border);
+
+  /* Size Mapping */
+  --text-display: var(--fs-display);
+  --text-h1: var(--fs-h1);
+  --text-h2: var(--fs-h2);
+  --text-body: var(--fs-body);
+  --text-mono: var(--fs-mono);
+
+  /* Animation / Keyframes custom */
+  --animate-noise: noise 0.5s steps(1) infinite;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--clr-bg-main);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--clr-border);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-txt-subtle);
+  }
+
+  .grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
 }
 
 @layer base {
   body {
-    @apply font-mono bg-bg-0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply font-body bg-background text-foreground antialiased selection:bg-accent selection:text-background;
+  }
+
+  /* Smooth typography rendering */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight text-balance;
   }
 }

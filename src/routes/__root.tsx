@@ -3,6 +3,7 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import appCss from '../styles.css?url'
+import { SmoothScroll } from '@/components/SmoothScroll'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -15,7 +16,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'The DevVerse - Award Winning Portfolio',
       },
     ],
     links: [
@@ -31,12 +32,13 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head suppressHydrationWarning={true}>
+    <html lang="en" suppressHydrationWarning>
+      <head>
         <HeadContent />
       </head>
       {/* relative to the body was due to the safari issues in ios 26 as advise in base ui docs */}
-      <body className="relative">
+      <body className="relative bg-background text-foreground font-body">
+        <SmoothScroll />
         <ThemeProvider>
           {/* isolate on the body wrapper as advised by base ui */}
           <div className="isolate">{children}</div>
@@ -53,6 +55,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           />
         </ThemeProvider>
         <Scripts />
+        <div className="grain" />
       </body>
     </html>
   )

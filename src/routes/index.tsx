@@ -1,30 +1,22 @@
-import { Hero } from '@/components/Hero'
 import { createFileRoute } from '@tanstack/react-router'
-import { NavigationProvider, useNavigation } from '../components/NavigationManager'
-import { CommandPalette } from '../components/CommandPalette'
-import { Projects, About, Experiments, Contact } from '../components/Sections'
+import { Hero } from '@/components/Hero'
+import { Projects } from '@/components/Projects'
+import { Skills } from '@/components/Skills'
+import { About } from '@/components/About'
+import { Contact } from '@/components/Contact'
 
-export const Route = createFileRoute('/')({ component: App })
+export const Route = createFileRoute('/')({
+  component: Home,
+})
 
-function Content() {
-  const { activeState } = useNavigation()
-
-  switch (activeState) {
-    case 'projects': return <Projects />
-    case 'about': return <About />
-    case 'experiments': return <Experiments />
-    case 'contact': return <Contact />
-    case 'home':
-    default:
-      return <Hero />
-  }
-}
-
-function App() {
+function Home() {
   return (
-   <NavigationProvider>
-     <Content />
-     <CommandPalette />
-   </NavigationProvider>
+    <main>
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+    </main>
   )
 }
