@@ -18,6 +18,9 @@ const config = defineConfig({
     tanstackStart(),
     viteReact(),
   ],
+  ssr: {
+    noExternal: ['gsap', '@gsap/react'],
+  },
 })
 
 export default config
