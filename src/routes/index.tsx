@@ -5,9 +5,7 @@ import { Skills } from '@/components/Skills'
 import { About } from '@/components/About'
 import { Contact } from '@/components/Contact'
 
-export const Route = createFileRoute('/')({
-  component: Home,
-})
+export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
   return (

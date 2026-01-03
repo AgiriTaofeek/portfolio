@@ -16,7 +16,12 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'The DevVerse - Award Winning Portfolio',
+        title: 'Agiri Taofeek | Frontend Engineer',
+      },
+      {
+        name: 'description',
+        content:
+          'Portfolio of Agiri Taofeek, a Frontend Engineer specializing in scalable financial web applications and 3D web experiences.',
       },
     ],
     links: [
