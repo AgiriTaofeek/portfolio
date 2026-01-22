@@ -21,8 +21,8 @@ const skillCategories = [
     bg: 'from-blue-500/10 to-purple-500/10',
   },
   {
-    title: 'Backend & Cloud',
-    skills: ['Node.js', 'Golang', 'Firebase', 'GCP', 'PostgreSQL'],
+    title: 'Backend',
+    skills: ['Node.js', 'Golang', 'Firebase', 'PostgreSQL'],
     colSpan: 'md:col-span-1',
     bg: 'from-emerald-500/10 to-teal-500/10',
   },
